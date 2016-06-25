@@ -2,8 +2,8 @@
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var sasukeImg = document.createElement("img");
-sasukeImg.src ="http://vignette4.wikia.nocookie.net/vsbattles/images/d/d0/Sasuke_Weapons_Loaded_Render_By_Skodwarde.png/revision/latest?cb=20151203062503"
-var sasuke={
+Img.src =""
+var ={
   x: 0 ,
   y: 0
 };

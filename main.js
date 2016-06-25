@@ -3,7 +3,7 @@ var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var sasukeImg = document.createElement("img");
 Img.src =""
-var ={
+var hero={
   x: 0 ,
   y: 0
 };

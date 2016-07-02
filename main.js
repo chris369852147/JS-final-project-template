@@ -31,7 +31,7 @@ $("#game-canvas").click(function(event){
       tower.x=event.offsetX-event.offsetX%32;
       tower.y=event.offsetY-event.offsetY%32;
     }
-    isbuilding=false
+    isbuilding=false;
   }
 })
 function draw(){

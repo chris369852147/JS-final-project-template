@@ -18,11 +18,22 @@ $("#game-canvas").mousemove(function(event){
   cursor.x=event.offsetX;
   cursor.y=event.offsetY;
 });
+
+var isbuilding=false;
+
+$("#game-canvas").click(function(event){
+  if(cursor.x>540 && cursor.y>380){
+    isbuilding=true;
+  }
+})
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage( heroImg, hero.x, hero.y);
   ctx.drawImage(btnImg,540 ,380,100,100 );
+  if(isbuilding=true){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
+  }
 }
 
 setInterval( draw, 40);
+

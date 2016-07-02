@@ -14,7 +14,9 @@ var hero={
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var cursor={x:0,y:0};
-
+$("#game-canvas").mousemove(function(event){
+  console.log("x:"+event.offsetX+"y:"+event.offsetY);
+});
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage( heroImg, hero.x, hero.y);

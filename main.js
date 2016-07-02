@@ -1,8 +1,8 @@
 
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
-var sasukeImg = document.createElement("img");
-Img.src =""
+var heroImg = document.createElement("img");
+heroImg.src ="images/jason.gif"
 var hero={
   x: 0 ,
   y: 0

@@ -23,7 +23,6 @@ $("#game-canvas").mousemove(function(event){
 var isbuilding=false;
 
 $("#game-canvas").click(function(event){
-  isbuilding=false;
   if(event.offsetX>540 && event.offsetY>380){
     isbuilding=true;
   }else{

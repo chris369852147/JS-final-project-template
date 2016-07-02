@@ -11,6 +11,7 @@ var hero={
   x: 0 ,
   y: 0
 };
+var tower={x:0,y:0};
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var cursor={x:0,y:0};
@@ -22,8 +23,15 @@ $("#game-canvas").mousemove(function(event){
 var isbuilding=false;
 
 $("#game-canvas").click(function(event){
+  isbuilding=false;
   if(event.offsetX>540 && event.offsetY>380){
     isbuilding=true;
+  }else{
+    if(isbuilding==true){
+      tower.x=event.offsetX-event.offsetX%32;
+      tower.y=event.offsetY-event.offsetY%32;
+    }
+    isbuilding=false
   }
 })
 function draw(){
@@ -32,6 +40,8 @@ function draw(){
   ctx.drawImage(btnImg,540 ,380,100,100 );
   if(isbuilding==true){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
+  }else{
+    tx.drawImage(towerImg,tower.x,tower.y);
   }
 }
 

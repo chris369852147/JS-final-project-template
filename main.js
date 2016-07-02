@@ -5,7 +5,7 @@ var heroImg = document.createElement("img");
 heroImg.src ="images/jason.gif";
 var btnImg =document.createElement("img");
 btnImg.src ="images/tower-btn.png";
-var tower =document.createElement("img");
+var towerImg =document.createElement("img");
 towerImg.src ="images/tower.png";
 var hero={
   x: 0 ,

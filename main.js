@@ -22,7 +22,7 @@ $("#game-canvas").mousemove(function(event){
 var isbuilding=false;
 
 $("#game-canvas").click(function(event){
-  if(cursor.x>540 && cursor.y>380){
+  if(event.x>540 && event.y>380){
     isbuilding=true;
   }
 })

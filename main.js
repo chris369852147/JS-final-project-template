@@ -4,7 +4,7 @@ bgImg.src = "images/map.png";
 var heroImg = document.createElement("img");
 heroImg.src ="images/jason.gif"
 var btnImg =document.createElement("img");
-btnImg ="images/tower-btn.png"
+btnImg.src ="images/tower-btn.png"
 var hero={
   x: 0 ,
   y: 0

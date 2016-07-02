@@ -30,7 +30,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage( heroImg, hero.x, hero.y);
   ctx.drawImage(btnImg,540 ,380,100,100 );
-  if(isbuilding=true){
+  if(isbuilding==true){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
 }

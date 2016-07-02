@@ -13,7 +13,7 @@ var hero={
 };
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-var cursor={x:0,y:0};
+var cursor={x:event.offsetX,y:event.offsetY};
 $("#game-canvas").mousemove(function(event){
   console.log("x:"+event.offsetX+"y:"+event.offsetY);
 });

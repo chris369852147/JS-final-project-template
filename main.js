@@ -9,7 +9,7 @@ var towerImg =document.createElement("img");
 towerImg.src ="images/tower.png";
 var hero={
   x:96,
-  y:488
+  y:448
 };
 var tower={x:0,y:0};
 var canvas = document.getElementById("game-canvas");

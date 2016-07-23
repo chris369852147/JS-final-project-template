@@ -8,7 +8,7 @@ btnImg.src ="images/tower-btn.png";
 var towerImg =document.createElement("img");
 towerImg.src ="images/tower.png";
 var hero={
-  x:96
+  x:96,
   y:488
 };
 var tower={x:0,y:0};

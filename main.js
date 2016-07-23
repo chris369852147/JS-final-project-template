@@ -13,8 +13,8 @@ var hero={
   speed:64,
   direction:{x:0,y:-1},
   move:function(){
-    this.x=this.x+this.speed*this.direction/FPS;
-    this.y=this.y+this.speed*this.direction/FPS;
+    this.x=this.x+this.speed*this.direction.x/FPS;
+    this.y=this.y+this.speed*this.direction.y/FPS;
   }
 };
 var tower={x:0,y:0};

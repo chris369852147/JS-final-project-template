@@ -1,4 +1,4 @@
-
+var FPS=60
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var heroImg = document.createElement("img");
@@ -9,7 +9,13 @@ var towerImg =document.createElement("img");
 towerImg.src ="images/tower.png";
 var hero={
   x:96,
-  y:448
+  y:448,
+  speed:64,
+  direction:{x:0,y:-1},
+  move:function(){
+    this.x=this.x+this.speed*this.direction/FPS;
+    this.y=this.y+this.speed*this.direction/FPS;
+  }
 };
 var tower={x:0,y:0};
 var canvas = document.getElementById("game-canvas");
@@ -44,5 +50,5 @@ function draw(){
   }
 }
 
-setInterval( draw, 40);
+setInterval( draw, 1000/FPS);
 

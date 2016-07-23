@@ -41,7 +41,9 @@ $("#game-canvas").click(function(event){
 })
 function draw(){
   ctx.drawImage(bgImg,0,0);
+  move.hero{
   ctx.drawImage( heroImg, hero.x, hero.y);
+  }
   ctx.drawImage(btnImg,540 ,380,100,100 );
   if(isbuilding==true){
   ctx.drawImage(towerImg,cursor.x,cursor.y);

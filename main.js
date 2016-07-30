@@ -15,6 +15,15 @@ var enemypath=[
   {x:224,y:320},
   {x:544,y:320}
   ];
+function iscollided(pointX,pointY,targetX,targetY,targetW,targetH){
+  if(pointX<=targetX+targetW
+  &&pointY>=targetY
+  &&pointY<=targetY+targetH){
+    return true;
+  }else{
+    return false;
+  }
+}
 
 var hero={
   x:96,

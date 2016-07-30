@@ -16,7 +16,8 @@ var enemypath=[
   {x:544,y:320}
   ];
 function iscollided(pointX,pointY,targetX,targetY,targetW,targetH){
-  if(pointX<=targetX+targetW
+  if(pointX>=targetX
+  %%pointX<=targetX+targetW
   &&pointY>=targetY
   &&pointY<=targetY+targetH){
     return true;

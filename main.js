@@ -85,7 +85,7 @@ $("#game-canvas").click(function(event){
 function draw(){
   if(clock%80==0){
     var hero=new Hero();
-    Heros.push(hero);
+    Heros.push(new Hero);
   }
   clock++;
   ctx.drawImage(bgImg,0,0);

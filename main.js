@@ -92,7 +92,7 @@ function draw(){
   hero.move();
   for(var i=0;i<hero.lenght;i++){
     heros[i].move();
-    ctx.drawImage(heroImg,heros[].x,heros[].y)
+    ctx.drawImage(heroImg,heros[i].x,heros[i].y)
   }
   ctx.drawImage(btnImg,540 ,380,100,100 );
   if(isbuilding==true){

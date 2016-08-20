@@ -26,13 +26,14 @@ function iscollided(pointX,pointY,targetX,targetY,targetW,targetH){
   }
 }
 
-var hero={
-  x:96,
-  y:448,
-  speed:64,
-  pathdes:0,
-  direction:{x:0,y:-1},
-  move:function(){
+var hero=new Hero
+function Hero(){
+  this.x:96,
+  this.y:448,
+  this.speed:64,
+  this.pathdes:0,
+  this.direction:{x:0,y:-1},
+  this.move:function(){
     if(iscollided(
       enemypath[this.pathdes].x,
       enemypath[this.pathdes].y,

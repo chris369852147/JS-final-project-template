@@ -89,9 +89,9 @@ function draw(){
   }
   clock++;
   ctx.drawImage(bgImg,0,0);
-  for(var i=0;i<heros.lenght;i++){
+  for(var i=0;i<heros.length;i++){
     heros[i].move();
-    ctx.drawImage(heroImg,heros[i].x,heros[i].y)
+    ctx.drawImage(heroImg,heros[i].x,heros[i].y);
   }
   ctx.drawImage(btnImg,540 ,380,100,100 );
   if(isbuilding==true){

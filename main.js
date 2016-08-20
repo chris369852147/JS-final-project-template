@@ -89,7 +89,7 @@ function draw(){
   }
   clock++;
   ctx.drawImage(bgImg,0,0);
-  for(var i=0;i<hero.lenght;i++){
+  for(var i=0;i<heros.lenght;i++){
     heros[i].move();
     ctx.drawImage(heroImg,heros[i].x,heros[i].y)
   }

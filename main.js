@@ -1,4 +1,5 @@
-var FPS=60
+var clock=0;
+var FPS=60;
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var heroImg = document.createElement("img");
@@ -57,7 +58,7 @@ function Hero(){
     }
   }
 };
-var hero=new Hero
+var heros=[]
 
 var tower={x:0,y:0};
 var canvas = document.getElementById("game-canvas");
@@ -82,9 +83,17 @@ $("#game-canvas").click(function(event){
   }
 })
 function draw(){
+  if(clock%80==0){
+    var hero=new Hero();
+    Heros.push(hero);
+  }
+  clock++;
   ctx.drawImage(bgImg,0,0);
   hero.move();
-  ctx.drawImage( heroImg, hero.x, hero.y);
+  for(var i=0;i<hero.lenght;i++){
+    heros[i].move();
+    ctx.drawImage(heroImg,heros[].x,heros[].y)
+  }
   ctx.drawImage(btnImg,540 ,380,100,100 );
   if(isbuilding==true){
   ctx.drawImage(towerImg,cursor.x,cursor.y);

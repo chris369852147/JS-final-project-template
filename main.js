@@ -8,7 +8,23 @@ var btnImg =document.createElement("img");
 btnImg.src ="images/tower-btn.png";
 var towerImg =document.createElement("img");
 towerImg.src ="images/tower.png";
+var crosshairImg=document.createElement("img");
+crosshairImg.src="images/crosshair.png";
 var treehp=10;
+var tower={
+  range:96,
+  aimingHerold:null,
+  searchHero:function(){
+    for(var i=o;i<heros.length;i++){
+      var d=Math.sqrt(Math.pow(this.x-heros[i].x,2)+Math.pow(this.y-heros[i].y,2));
+      if(d<=this.range){
+        this.aimingHerold=i;
+        return;
+      }
+    }
+    this.aimingHerold=null;
+  }
+};
 var enemypath=[
   {x:96,y:64},
   {x:384,y:64},
@@ -113,7 +129,12 @@ function draw(){
   }else{
    ctx.drawImage(towerImg,tower.x,tower.y);
   }
-  ctx.fillText("HP:"+treehp,32,32)
+  ctx.fillText("HP:"+treehp,32,32);
+  tower.searchHero();
+  if(tower.aimingHerold!=null){
+    var id=tower.aimingHerold;
+    ctx.drawImage(crosshairImg,heros[id].x,heros[id].y);
+  }
 }
 
 setInterval( draw, 1000/FPS);

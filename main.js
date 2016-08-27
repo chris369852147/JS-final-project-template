@@ -102,7 +102,7 @@ function draw(){
   }else{
    ctx.drawImage(towerImg,tower.x,tower.y);
   }
-  ctx.fillText(hp,0,0)
+  ctx.fillText(hp,100,100)
 }
 
 setInterval( draw, 1000/FPS);

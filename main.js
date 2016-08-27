@@ -100,7 +100,7 @@ function draw(){
   clock++;
   ctx.drawImage(bgImg,0,0);
   for(var i=0;i<heros.length;i++){
-    if(hero[i].hp<==0){
+    if(hero[i].hp<=0){
       hero.splice(i,1);
     }else{
     heros[i].move();

@@ -113,7 +113,7 @@ function draw(){
   }else{
    ctx.drawImage(towerImg,tower.x,tower.y);
   }
-  ctx.fillText(hp,32,32)
+  ctx.fillText("HP"+treehp,32,32)
 }
 
 setInterval( draw, 1000/FPS);

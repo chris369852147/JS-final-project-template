@@ -8,7 +8,7 @@ var btnImg =document.createElement("img");
 btnImg.src ="images/tower-btn.png";
 var towerImg =document.createElement("img");
 towerImg.src ="images/tower.png";
-var hp=10;
+var treehp=10;
 var enemypath=[
   {x:96,y:64},
   {x:384,y:64},
@@ -30,6 +30,7 @@ function iscollided(pointX,pointY,targetX,targetY,targetW,targetH){
 }
 
 function Hero(){
+  this.hp=1;
   this.x=96;
   this.y=448;
   this.speed=64;
@@ -45,6 +46,11 @@ function Hero(){
       this.x=enemypath[this.pathdes].x;
       this.y=enemypath[this.pathdes].y;
       this.pathdes++;
+      if(this.pathdes>=enemypath.length){
+        this.hp=0;
+        treehp-=1
+        return;
+      }
       if(enemypath[this.pathdes].x>this.x){
         this.direction={x:1,y:0};
       }else if(enemypath[this.pathdes].x<this.x){
@@ -94,8 +100,12 @@ function draw(){
   clock++;
   ctx.drawImage(bgImg,0,0);
   for(var i=0;i<heros.length;i++){
+    if(hero[i].hp<==0){
+      hero.splice(i,1);
+    }else{
     heros[i].move();
     ctx.drawImage(heroImg,heros[i].x,heros[i].y);
+    }
   }
   ctx.drawImage(btnImg,540 ,380,100,100 );
   if(isbuilding==true){

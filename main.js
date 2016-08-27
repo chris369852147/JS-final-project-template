@@ -14,7 +14,7 @@ var treehp=10;
 var tower={
   range:96,
   aimingHerold:null,
-  searchHero:function(){
+  searchHero:function searchHero(){
     for(var i=o;i<heros.length;i++){
       var d=Math.sqrt(Math.pow(this.x-heros[i].x,2)+Math.pow(this.y-heros[i].y,2));
       if(d<=this.range){

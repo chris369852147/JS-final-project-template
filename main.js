@@ -8,6 +8,7 @@ var btnImg =document.createElement("img");
 btnImg.src ="images/tower-btn.png";
 var towerImg =document.createElement("img");
 towerImg.src ="images/tower.png";
+var hp=10;
 var enemypath=[
   {x:96,y:64},
   {x:384,y:64},
@@ -63,6 +64,8 @@ var heros=[]
 var tower={x:0,y:0};
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
+ctx.font="24px Arial";
+ctx.fillStyle="white";
 var cursor={x:0,y:0};
 $("#game-canvas").mousemove(function(event){
   cursor.x=event.offsetX;
@@ -99,6 +102,7 @@ function draw(){
   }else{
    ctx.drawImage(towerImg,tower.x,tower.y);
   }
+  ctx.fillText(hp,)
 }
 
 setInterval( draw, 1000/FPS);

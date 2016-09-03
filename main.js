@@ -3,7 +3,7 @@ var FPS=60;
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var heroImg = document.createElement("img");
-heroImg.src ="images/jason.gif";
+heroImg.src ="images/slime.gif";
 var btnImg =document.createElement("img");
 btnImg.src ="images/tower-btn.png";
 var towerImg =document.createElement("img");
@@ -15,15 +15,32 @@ var tower={
   range:96,
   aimingHerold:null,
   searchHero:function searchHero(){
+    this.launch=1/FPS
     for(var i=o;i<heros.length;i++){
       var d=Math.sqrt(Math.pow(this.x-heros[i].x,2)+Math.pow(this.y-heros[i].y,2));
       if(d<=this.range){
         this.aimingHerold=i;
+        if(this.launch<=0){
+          this.shoot(i);
+          this.launch=this.fireperiod;
+        }
         return;
       }
     }
     this.aimingHerold=null;
   }
+  shoot:function shoot(id){
+    ctx.beginPath();
+    ctx.moveTo(this.x+16,this.y);
+    ctx.lineTo(heros[id].x+16,heros[id].y+16);
+    ctx.strokeStyle='blue';
+    ctx.lineWidth=3;
+    ctx.stroke();
+    heros[id].hp-=this.power;
+  }
+  fireperiod:0.5
+  launch:0.5
+  power:5
 };
 var enemypath=[
   {x:96,y:64},

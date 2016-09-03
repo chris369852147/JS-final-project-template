@@ -14,9 +14,9 @@ var treehp=10;
 var score=0;
 var money=10
 function tower(){
-  range:96,
-  aimingHerold:null,
-  searchHero:function (){
+  this.range:96;
+  this.aimingHerold:null;
+  this.searchHero:function (){
     this.launch-=1/FPS;
     for(var i=0;i<heros.length;i++){
       var d=Math.sqrt(Math.pow(this.x-heros[i].x,2)+Math.pow(this.y-heros[i].y,2));
@@ -30,8 +30,8 @@ function tower(){
       }
     }
     this.aimingHerold=null;
-  },
-  shoot:function (id){
+  };
+  this.shoot:function (id){
     ctx.beginPath();
     ctx.moveTo(this.x+16,this.y);
     ctx.lineTo(heros[id].x+16,heros[id].y+16);
@@ -39,11 +39,11 @@ function tower(){
     ctx.lineWidth=3;
     ctx.stroke();
     heros[id].hp-=this.power;
-  },
-  fireperiod:0.5,
-  launch:0.5,
-  power:5
-};
+  };
+  this.fireperiod:0.5;
+  this.launch:0.5;
+  this.power:5;
+}
 
 var towers=[];
 
@@ -103,7 +103,7 @@ function Hero(){
       this.y=this.y+this.speed*this.direction.y/FPS;
     }
   }
-};
+}
 var heros=[];
 
 var canvas = document.getElementById("game-canvas");
@@ -125,6 +125,7 @@ $("#game-canvas").click(function(event){
     if(isbuilding==true){
       tower.x=event.offsetX-event.offsetX%32;
       tower.y=event.offsetY-event.offsetY%32;
+      towers.push(tower);
     }
     isbuilding=false;
   }

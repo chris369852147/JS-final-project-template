@@ -148,6 +148,7 @@ function draw(){
     }
   }
   ctx.drawImage(btnImg,540 ,380,100,100 );
+  
   if(isbuilding==true){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
   }else{
@@ -156,7 +157,7 @@ function draw(){
   ctx.fillText("HP:"+treehp,32,32);
   ctx.fillText("Score:"+score,32,48);
   ctx.fillText("Money:"+money,32,64);
-  tower.searchHero();
+  towers.searchHero();
   if(tower.aimingHerold!=null){
     var id=tower.aimingHerold;
     ctx.drawImage(crosshairImg,heros[id].x,heros[id].y);

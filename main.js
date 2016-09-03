@@ -13,7 +13,7 @@ crosshairImg.src="images/crosshair.png";
 var treehp=10;
 var score=0;
 var money=10
-function tower={
+function tower(){
   range:96,
   aimingHerold:null,
   searchHero:function (){

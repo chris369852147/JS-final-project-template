@@ -15,7 +15,7 @@ var tower={
   range:96,
   aimingHerold:null,
   searchHero:function (){
-    this.launch=1/FPS;
+    this.launch-=1/FPS;
     for(var i=0;i<heros.length;i++){
       var d=Math.sqrt(Math.pow(this.x-heros[i].x,2)+Math.pow(this.y-heros[i].y,2));
       if(d<=this.range){

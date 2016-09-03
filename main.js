@@ -14,9 +14,9 @@ var treehp=10;
 var score=0;
 var money=10
 function tower(){
-  this.range:96;
-  this.aimingHerold:null;
-  this.searchHero:function (){
+  this.range=96;
+  this.aimingHerold=null;
+  this.searchHero=function (){
     this.launch-=1/FPS;
     for(var i=0;i<heros.length;i++){
       var d=Math.sqrt(Math.pow(this.x-heros[i].x,2)+Math.pow(this.y-heros[i].y,2));
@@ -31,7 +31,7 @@ function tower(){
     }
     this.aimingHerold=null;
   };
-  this.shoot:function (id){
+  this.shoot=function (id){
     ctx.beginPath();
     ctx.moveTo(this.x+16,this.y);
     ctx.lineTo(heros[id].x+16,heros[id].y+16);
@@ -40,9 +40,9 @@ function tower(){
     ctx.stroke();
     heros[id].hp-=this.power;
   };
-  this.fireperiod:0.5;
-  this.launch:0.5;
-  this.power:5;
+  this.fireperiod=0.5;
+  this.launch=0.5;
+  this.power=5;
 }
 
 var towers=[];

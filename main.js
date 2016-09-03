@@ -28,7 +28,7 @@ var tower={
       }
     }
     this.aimingHerold=null;
-  }
+  },
   shoot:function shoot(id){
     ctx.beginPath();
     ctx.moveTo(this.x+16,this.y);
@@ -37,9 +37,9 @@ var tower={
     ctx.lineWidth=3;
     ctx.stroke();
     heros[id].hp-=this.power;
-  }
-  fireperiod:0.5
-  launch:0.5
+  },
+  fireperiod:0.5,
+  launch:0.5,
   power:5
 };
 var enemypath=[

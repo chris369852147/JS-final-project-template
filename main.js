@@ -14,7 +14,7 @@ var treehp=10;
 var tower={
   range:96,
   aimingHerold:null,
-  searchHero:function searchHero(){
+  searchHero:function (){
     this.launch=1/FPS
     for(var i=o;i<heros.length;i++){
       var d=Math.sqrt(Math.pow(this.x-heros[i].x,2)+Math.pow(this.y-heros[i].y,2));
@@ -29,7 +29,7 @@ var tower={
     }
     this.aimingHerold=null;
   },
-  shoot:function shoot(id){
+  shoot:function (id){
     ctx.beginPath();
     ctx.moveTo(this.x+16,this.y);
     ctx.lineTo(heros[id].x+16,heros[id].y+16);

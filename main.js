@@ -11,7 +11,9 @@ towerImg.src ="images/tower.png";
 var crosshairImg=document.createElement("img");
 crosshairImg.src="images/crosshair.png";
 var treehp=10;
-var tower={
+var score=0;
+var money=10
+function tower={
   range:96,
   aimingHerold:null,
   searchHero:function (){
@@ -42,6 +44,9 @@ var tower={
   launch:0.5,
   power:5
 };
+
+var towers=[];
+
 var enemypath=[
   {x:96,y:64},
   {x:384,y:64},
@@ -134,6 +139,8 @@ function draw(){
   for(var i=0;i<heros.length;i++){
     if(heros[i].hp<=0){
       heros.splice(i,1);
+      score++;
+      money=money+2
     }else{
     heros[i].move();
     ctx.drawImage(heroImg,heros[i].x,heros[i].y);
@@ -146,6 +153,8 @@ function draw(){
    ctx.drawImage(towerImg,tower.x,tower.y);
   }
   ctx.fillText("HP:"+treehp,32,32);
+  ctx.fillText("Score:"+score,32,48);
+  ctx.fillText("Money:"+money,32,64);
   tower.searchHero();
   if(tower.aimingHerold!=null){
     var id=tower.aimingHerold;

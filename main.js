@@ -160,10 +160,10 @@ function draw(){
     ctx.drawImage(crosshairImg,heros[id].x,heros[id].y);
    ctx.drawImage(towerImg,towers[i].x,towers[i].y);
   }
-  ctx.fillText("HP:"+treehp,32,32);
+ }
+ ctx.fillText("HP:"+treehp,32,32);
   ctx.fillText("Score:"+score,32,48);
   ctx.fillText("Money:"+money,32,64);
- }
 } 
 
 setInterval( draw, 1000/FPS);

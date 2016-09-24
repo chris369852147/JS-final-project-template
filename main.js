@@ -147,7 +147,7 @@ function draw(){
     }else{
     heros[i].move();
     ctx.drawImage(heroImg,heros[i].x,heros[i].y);
-     towers.searchHero();
+     Tower.searchHero();
   if(tower.aimingHerold!=null){
     var id=towers[i].aimingHerold;
     ctx.drawImage(crosshairImg,heros[id].x,heros[id].y);

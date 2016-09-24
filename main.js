@@ -133,6 +133,9 @@ $("#game-canvas").click(function(event){
   }
 })
 function draw(){
+  if(treehp==0){
+  clearInterval(setInterval);
+}else{
   if(clock%80==0){
     var hero=new Hero();
     heros.push(hero);
@@ -164,12 +167,10 @@ function draw(){
  ctx.fillText("HP:"+treehp,32,32);
   ctx.fillText("Score:"+score,32,48);
   ctx.fillText("Money:"+money,32,64);
+ }
 } 
-var IntervalID=setInterval(function(){
-  draw,1000/FPS;
-},3000);
-if(treehp==0){
-  clearInterval(IntervalId);
-}
+setInterval(draw,1000/FPS)
+
+
 
 

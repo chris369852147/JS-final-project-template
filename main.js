@@ -68,7 +68,7 @@ function iscollided(pointX,pointY,targetX,targetY,targetW,targetH){
 }
 
 function Hero(){
-  this.hp=1;
+  this.hp=3+heros.length;
   this.x=96;
   this.y=448;
   this.speed=64;
@@ -127,7 +127,7 @@ $("#game-canvas").click(function(event){
       tower.x=event.offsetX-event.offsetX%32;
       tower.y=event.offsetY-event.offsetY%32;
       towers.push(tower);
-      money=money-10;
+      money-=10;
     }
     isbuilding=false;
   }
@@ -158,13 +158,18 @@ function draw(){
   if(towers[i].aimingHerold!=null){
     var id=towers[i].aimingHerold;
     ctx.drawImage(crosshairImg,heros[id].x,heros[id].y);
-   ctx.drawImage(towerImg,towers[i].x,towers[i].y);
   }
+   ctx.drawImage(towerImg,towers[i].x,towers[i].y);
  }
  ctx.fillText("HP:"+treehp,32,32);
   ctx.fillText("Score:"+score,32,48);
   ctx.fillText("Money:"+money,32,64);
 } 
+var IntervalID=setInterval(function(){
+  draw,1000/FPS
+},3000);
+if(treehp=0){
+  clearInterval(IntervalId);
+}
 
-setInterval( draw, 1000/FPS);
 

@@ -155,7 +155,7 @@ function draw(){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
   }for(var i=0;i<towers.length;i++){
     towers[i].searchHero();
-  if(tower.aimingHerold!=null){
+  if(towers[i].aimingHerold!=null){
     var id=towers[i].aimingHerold;
     ctx.drawImage(crosshairImg,heros[id].x,heros[id].y);
    ctx.drawImage(towerImg,towers[i].x,towers[i].y);

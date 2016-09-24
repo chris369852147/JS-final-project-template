@@ -68,7 +68,7 @@ function iscollided(pointX,pointY,targetX,targetY,targetW,targetH){
 }
 
 function Hero(){
-  this.hp=3+heros.length;
+  this.hp=6+heros.length;
   this.x=96;
   this.y=448;
   this.speed=64;

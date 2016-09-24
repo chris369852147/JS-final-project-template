@@ -147,18 +147,17 @@ function draw(){
     }else{
     heros[i].move();
     ctx.drawImage(heroImg,heros[i].x,heros[i].y);
-     Tower.searchHero();
-  if(tower.aimingHerold!=null){
-    var id=towers[i].aimingHerold;
-    ctx.drawImage(crosshairImg,heros[id].x,heros[id].y);
      }
     }
-  }
   ctx.drawImage(btnImg,540 ,380,100,100 );
   
   if(isbuilding==true){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
   }for(var i=0;i<towers.length;i++){
+    towers[i].searchHero();
+  if(tower.aimingHerold!=null){
+    var id=towers[i].aimingHerold;
+    ctx.drawImage(crosshairImg,heros[id].x,heros[id].y);
    ctx.drawImage(towerImg,towers[i].x,towers[i].y);
   }
   ctx.fillText("HP:"+treehp,32,32);

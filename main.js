@@ -119,7 +119,7 @@ $("#game-canvas").mousemove(function(event){
 var isbuilding=false;
 
 $("#game-canvas").click(function(event){
-  if(event.offsetX>540 && event.offsetY>380){
+  if(event.offsetX>540 && event.offsetY>380 && money=>10){
     isbuilding=true;
   }else{
     if(isbuilding==true){
@@ -127,6 +127,7 @@ $("#game-canvas").click(function(event){
       tower.x=event.offsetX-event.offsetX%32;
       tower.y=event.offsetY-event.offsetY%32;
       towers.push(tower);
+      money=money-10;
     }
     isbuilding=false;
   }

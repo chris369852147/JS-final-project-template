@@ -168,7 +168,7 @@ function draw(){
 var IntervalID=setInterval(function(){
   draw,1000/FPS;
 },3000);
-if(treehp=0){
+if(treehp==0){
   clearInterval(IntervalId);
 }
 

@@ -12,8 +12,9 @@ var crosshairImg=document.createElement("img");
 crosshairImg.src="images/crosshair.png";
 var treehp=10;
 var score=0;
-var money=10
-function tower(){
+var money=10;
+
+function Tower(){
   this.range=96;
   this.aimingHerold=null;
   this.searchHero=function (){
@@ -44,7 +45,6 @@ function tower(){
   this.launch=0.5;
   this.power=5;
 }
-
 var towers=[];
 
 var enemypath=[
@@ -123,6 +123,7 @@ $("#game-canvas").click(function(event){
     isbuilding=true;
   }else{
     if(isbuilding==true){
+      var tower=new Tower();
       tower.x=event.offsetX-event.offsetX%32;
       tower.y=event.offsetY-event.offsetY%32;
       towers.push(tower);
@@ -145,23 +146,23 @@ function draw(){
     }else{
     heros[i].move();
     ctx.drawImage(heroImg,heros[i].x,heros[i].y);
+     towers.searchHero();
+  if(tower.aimingHerold!=null){
+    var id=towers[i].aimingHerold;
+    ctx.drawImage(crosshairImg,heros[id].x,heros[id].y);
+     }
     }
   }
   ctx.drawImage(btnImg,540 ,380,100,100 );
   
   if(isbuilding==true){
   ctx.drawImage(towerImg,cursor.x,cursor.y);
-  }else{
-   ctx.drawImage(towerImg,tower.x,tower.y);
+  }for(var i=0;i<towers.length;i++){
+   ctx.drawImage(towerImg,towers[i].x,towers[i].y);
   }
   ctx.fillText("HP:"+treehp,32,32);
   ctx.fillText("Score:"+score,32,48);
   ctx.fillText("Money:"+money,32,64);
-  towers.searchHero();
-  if(tower.aimingHerold!=null){
-    var id=tower.aimingHerold;
-    ctx.drawImage(crosshairImg,heros[id].x,heros[id].y);
-  }
 }
 
 setInterval( draw, 1000/FPS);

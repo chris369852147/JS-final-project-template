@@ -135,7 +135,10 @@ $("#game-canvas").click(function(event){
 function draw(){
   if(treehp==0){
     ctx.font="48px Arial";
-    ctx.fillText("Game over",64,64)
+    ctx.textAlign="center";
+    ctx.textBaseline="middle";
+    ctx.fillStyle="red";
+    ctx.fillText("Game Over!!",270,270)
   clearInterval(setInterval);
 }else{
   if(clock%80==0){

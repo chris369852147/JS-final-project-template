@@ -166,7 +166,7 @@ function draw(){
   ctx.fillText("Money:"+money,32,64);
 } 
 var IntervalID=setInterval(function(){
-  draw,1000/FPS
+  draw,1000/FPS;
 },3000);
 if(treehp=0){
   clearInterval(IntervalId);

@@ -43,7 +43,7 @@ function Tower(){
   };
   this.fireperiod=0.5;
   this.launch=0.5;
-  this.power=5;
+  this.power=50+towers.length;
 }
 var towers=[];
 

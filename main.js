@@ -10,7 +10,7 @@ var towerImg =document.createElement("img");
 towerImg.src ="images/tower.png";
 var crosshairImg=document.createElement("img");
 crosshairImg.src="images/crosshair.png";
-var treehp=10;
+var treehp=20;
 var score=0;
 var money=10;
 
@@ -43,7 +43,7 @@ function Tower(){
   };
   this.fireperiod=0.5;
   this.launch=0.5;
-  this.power=50+towers.length;
+  this.power=50+towers.length*10;
 }
 var towers=[];
 

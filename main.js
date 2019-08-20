@@ -127,7 +127,7 @@ $("#game-canvas").click(function(event){
       tower.x=event.offsetX-event.offsetX%32;
       tower.y=event.offsetY-event.offsetY%32;
       towers.push(tower);
-      money-=10;
+      money-=5;
     }
     isbuilding=false;
   }

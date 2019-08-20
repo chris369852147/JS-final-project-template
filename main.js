@@ -119,7 +119,7 @@ $("#game-canvas").mousemove(function(event){
 var isbuilding=false;
 
 $("#game-canvas").click(function(event){
-  if(event.offsetX>540 && event.offsetY>380 && money>=10){
+  if(event.offsetX>540 && event.offsetY>380 && money>=5){
     isbuilding=true;
   }else{
     if(isbuilding==true){
